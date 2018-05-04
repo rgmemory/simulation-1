@@ -1,14 +1,15 @@
 import React from 'react';
+import './Product.css'
 
 export default function Product(props){
 
  
 
     return(
-        <div>
+        <div className="product">
             Product
-            Name: {props.current.name}
-            Price: {props.current.price}
+            <h2>Name: {props.current.name}</h2>
+            <h2>Price: {props.current.price}</h2>
             Image: {props.current.image}
 
             <button >Edit</button>

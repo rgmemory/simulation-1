@@ -20,7 +20,11 @@ export default class Form extends Component{
     }
 
     componentDidUpdate(previousProps){
-        
+        if(previousProps.selectedProduct !== this.props.selectedProduct){
+            this.setState({
+                
+            })
+        }
     }
 
     updateImage(value){
