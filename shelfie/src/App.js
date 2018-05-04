@@ -6,8 +6,6 @@ import Product from './component/Product/Product'
 import Header from './component/Header/Header'
 import axios from 'axios'
 
-// let inventory = ;
-
 class App extends Component {
 
   constructor(){
@@ -16,9 +14,20 @@ class App extends Component {
     this.state = {
       inventoryList: []
     }
+
+    this.getProducts = this.getProducts.bind(this);
   }
 
   componentDidMount(){
+    axios.get('/api/inventory').then(res => {
+      console.log(res);
+      this.setState({
+        inventoryList: res.data
+      })
+    }).catch(e => {console.log("this is the error", e)})
+  }
+
+  getProducts(){
     axios.get('/api/inventory').then(res => {
       console.log(res);
       this.setState({
@@ -35,7 +44,7 @@ class App extends Component {
 
         <Dashboard inventoryList={this.state.inventoryList}/>
         
-        <Form />
+        <Form getProducts={this.getProducts}/>
       </div>
     );
   }
@@ -43,19 +52,3 @@ class App extends Component {
 
 export default App;
 
-
-// {
-//   name: "shoes",
-//   price: 10,
-//   image: 'www.shoes.com'
-// },
-// {
-//   name: "shirt",
-//   price: 20,
-//   image: 'www.shirt.com'
-// },
-// {
-//   name: "pants",
-//   price: 30,
-//   image: 'www.pants.com'
-// }
