@@ -19,29 +19,33 @@ export default class Form extends Component{
         this.updateProdcts = this.updateProdcts.bind(this)
     }
 
+    componentDidUpdate(previousProps){
+        
+    }
+
     updateImage(value){
-        console.log(value);
+        // console.log(value);
         this.setState({
             image: value
         })
     }
 
     updateProductName(value){
-        console.log(value)
+        // console.log(value)
         this.setState({
             productName: value
         })
     }
 
     updatePrice(value){
-        console.log(value)
+        // console.log(value)
         this.setState({
             price: value
         })
     }
 
     cancel(){
-        console.log("clicked");
+        // console.log("clicked");
         this.setState({
             image: '',
             productName: '',
@@ -50,7 +54,7 @@ export default class Form extends Component{
     }
 
     updateProdcts(){
-        console.log("update products")
+        // console.log("update products")
         axios.post('/api/product', {name: this.state.productName, price: this.state.price, image: this.state.image}).then(
             this.props.getProducts(),
             this.cancel()
@@ -61,9 +65,9 @@ export default class Form extends Component{
         return(
             <div className="form">
                 Form
-                <input value={this.state.productName} onChange={event => {this.updateProductName(event.target.value)}}/>
-                <input value={this.state.price} onChange={event => {this.updatePrice(event.target.value)}}/>
-                <input value={this.state.image} onChange={event => {this.updateImage(event.target.value)}}/>
+                Name:<input value={this.state.productName} onChange={event => {this.updateProductName(event.target.value)}}/>
+                Price:<input value={this.state.price} onChange={event => {this.updatePrice(event.target.value)}}/>
+                Image:<input value={this.state.image} onChange={event => {this.updateImage(event.target.value)}}/>
 
                 <button onClick={this.cancel}>Cancel </button>
                 <button onClick={this.updateProdcts}>Add to Inventory </button>

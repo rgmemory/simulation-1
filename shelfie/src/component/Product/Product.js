@@ -11,6 +11,9 @@ export default function Product(props){
             Price: {props.current.price}
             Image: {props.current.image}
 
+            <button >Edit</button>
+            <button onClick={() => props.deleteProduct(props.current.id)}>Delete</button>
+
         </div>
     )
 }
