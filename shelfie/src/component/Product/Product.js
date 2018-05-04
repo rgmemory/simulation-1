@@ -5,19 +5,30 @@ export default function Product(props){
     // var inventoryList = props.inventoryList.map((current, index) => {
     //     return(
     //         <div key={current + index}>
-    //             Name: {current.name}
-    //             Price: {current.price}
-    //             Image: {current.image}
+    //             Name: {props.current.name}
+    //             Price: {props.current.price}
+    //             Image: {props.current.image}
     //         </div>
     //     )
+    // })
+
+    // let inventoryList = props.inventoryList.map((current, index) => {
+    //     return(
+    //         current[index].name
+    //     )
+    //     // return(
+    //     //     Name: {current.name}
+    //     // )
     // })
 
     return(
         <div>
             Product
-            Name: {props.inventoryList.name}
-            Price: {props.inventoryList.price}
-            Image: {props.inventoryList.image}
+            Name: {props.current.name}
+            Price: {props.current.price}
+            Image: {props.current.image}
+
+            {/* {inventoryList} */}
         </div>
     )
 }

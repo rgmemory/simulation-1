@@ -11,7 +11,8 @@ export default class Dashboard extends Component{
         let inventory = this.props.inventoryList.map((current, index) => {
             return(
                 <div key={current + index}>
-                    <Product inventoryList={this.props.inventoryList}/>
+                    {/* <Product inventoryList={this.props.inventoryList}/> */}
+                    <Product current={current}/>
                 </div>
             )
         })
