@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import './Form.css';
 
 export default class Form extends Component{
     constructor(){
@@ -58,7 +59,7 @@ export default class Form extends Component{
 
     render(){
         return(
-            <div>
+            <div className="form">
                 Form
                 <input value={this.state.productName} onChange={event => {this.updateProductName(event.target.value)}}/>
                 <input value={this.state.price} onChange={event => {this.updatePrice(event.target.value)}}/>

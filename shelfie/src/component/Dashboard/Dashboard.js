@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Product from '../Product/Product'
+import './Dashboard.css'
 
 export default class Dashboard extends Component{
     constructor(){
@@ -11,17 +12,14 @@ export default class Dashboard extends Component{
         let inventory = this.props.inventoryList.map((current, index) => {
             return(
                 <div key={current + index}>
-                    {/* <Product inventoryList={this.props.inventoryList}/> */}
                     <Product current={current}/>
                 </div>
             )
         })
 
         return(
-            <div>
-                Dashboard
-
-                {/* <Product /> */}
+            <div className="dashboard">
+                Dashboard (product is in dashboard)
                 {inventory}
             </div>
         )
